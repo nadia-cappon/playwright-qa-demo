@@ -26,12 +26,12 @@ Exploration (IA + MCP) → Exigences → Cas de test (IA) → Revue QA → Codeg
 | Rapport de test (clôture) | [`documentation/07-rapport-de-test.md`](documentation/07-rapport-de-test.md) |
 | Prompts utilisés | [`documentation/prompts/`](documentation/prompts/) |
 
-## Les 3 parcours testés (10 tests)
+## Les 3 parcours testés (9 tests)
 
 | # | Parcours | Fichier | Tests |
 |---|---|---|---|
 | 1 | **Parcours utilisateur** : un prospect assureur IARD va de l'accueil au formulaire de demande de démonstration (logo → sous-menu Nos solutions → Assurance IARD → Demander une démo → retour par le logo → Découvrir nos logiciels) | `tests/01-parcours-prospect.spec.ts` | 1 test en 6 étapes, joué en **desktop et mobile** |
-| 2 | **Accessibilité** : widget d'accessibilité du site (contraste élevé, niveaux de gris, réglage conservé puis réinitialisé) | `tests/02-accessibilite-widget.spec.ts` | 3 tests |
+| 2 | **Accessibilité** : widget d'accessibilité du site (contraste élevé, niveaux de gris, réglage conservé puis réinitialisé ; contraste actif non annoncé aux lecteurs d'écran) | `tests/02-accessibilite-widget.spec.ts` | 2 tests : le parcours en 6 étapes + l'anomalie ANO-06 |
 | 3 | **Formulaire de contact** : formulaire vide, format de l'email, téléphone (ANO-01), XSS, longueur (ANO-02) | `tests/03-formulaire-contact.spec.ts` | 5 tests |
 
 Les **anomalies connues** sont marquées `test.fail()` avec leur identifiant (ANO-xx) : la suite reste verte tant que l'anomalie existe, et signalera sa correction.
