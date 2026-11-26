@@ -1,0 +1,30 @@
+{
+  "name": "playwright-qa-demo",
+  "version": "1.0.0",
+  "description": "Démonstration d'automatisation de tests Playwright + TypeScript (Page Object Model) assistée par IA (cas pratique : site public antenia.com)",
+  "author": "Nadia Cappon",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:parcours": "playwright test --grep @parcours",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:formulaire": "playwright test --grep @formulaire",
+    "test:headed": "playwright test --headed --workers=1",
+    "parcours:headed": "playwright test --grep @parcours --headed --workers=1",
+    "test:securite": "playwright test --grep @securite",
+    "test:a11y": "playwright test --grep @a11y",
+    "test:mobile": "playwright test --project=mobile",
+    "codegen": "playwright codegen https://www.antenia.com/",
+    "test:ui": "playwright test --ui",
+    "demo": "playwright test -c playwright.demo.config.ts",
+    "demo:ui": "playwright test -c playwright.demo.config.ts --ui",
+    "rapport": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}
